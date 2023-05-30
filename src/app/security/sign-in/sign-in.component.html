@@ -1,0 +1,38 @@
+<div class="main-wrapper" style="margin: auto; display: flex; align-items: center; justify-content: center; ">
+    <mat-card class="box">
+        <form [formGroup]="signInForm" (ngSubmit)="signIn()" class="auth-form">
+            <mat-card-content>
+                <div class="padre" style="display: grid; justify-content: center;">
+                    <img class="logo-1" src="https://cdn.icon-icons.com/icons2/2407/PNG/512/login_gov_icon_146024.png" alt="" />
+                </div>
+                <br>
+                <br>
+                <mat-form-field class="auth-full-width">
+                    <mat-label>Documento</mat-label>
+                    <input matInput placeholder="Documento" type="text" formControlName="username"
+                        oninput="this.value = this.value.toLowerCase()" />
+                </mat-form-field>
+
+                <mat-form-field class="auth-full-width" (keyup.enter)="signIn()">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'" formControlName="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon class="material-icons-outlined">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+            </mat-card-content>
+            <button mat-raised-button color="accent" class="btn-block" type="submit"
+                [disabled]="!signInForm.valid || submmiting">
+                Entrar
+                <span *ngIf="submmiting" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>
+            </button>
+        </form>
+        <br />
+        <div class="padre">
+            <button mat-button (click)="redirect()">Registrarse</button>
+        </div>
+    </mat-card>
+</div>

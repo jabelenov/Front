@@ -1,0 +1,56 @@
+<div class="main-wrapper" style="margin: auto; display: flexbox; justify-content: flex-start;">
+    <mat-card class="box">
+        <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <mat-card-content>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img class="logo-1" src="https://cdn.icon-icons.com/icons2/2407/PNG/512/login_gov_icon_146024.png" alt="" />
+            </div>
+            <div class="row" style="display: flex; padding-top: 30px;" >
+                <div class="col-md-6" style="padding: 12px;">
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput placeholder="Nombre" type="text" formControlName="firstName" oninput="this.value = this.value.toLowerCase()" />
+                    </mat-form-field>
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" type="text" formControlName="email" oninput="this.value = this.value.toLowerCase()" />
+                    </mat-form-field>
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput placeholder="Contraseña" formControlName="password" type="password" />
+                    </mat-form-field>
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput placeholder="Teléfono" formControlName="phone" type="text" />
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6" style="padding: 12px;">
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput placeholder="Apellido" type="text" formControlName="lastName" oninput="this.value = this.value.toLowerCase()" />
+                    </mat-form-field>
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Documento</mat-label>
+                        <input matInput placeholder="Documento" type="text" formControlName="document" oninput="this.value = this.value.toLowerCase()" />
+                    </mat-form-field>
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Confirmar Contraseña</mat-label>
+                        <input matInput placeholder="Confirmar Contraseña" formControlName="passwordConfirm" type="password" />
+                    </mat-form-field>
+                    <mat-form-field class="auth-full-width">
+                        <mat-label>Dirección</mat-label>
+                        <input matInput placeholder="Dirección" formControlName="address" type="text" />
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <button mat-raised-button color="accent" class="btn-block" type="submit"
+                [disabled]="!signUpForm.valid || submmiting">
+                Entrar
+                <span *ngIf="submmiting" class="spinner-border spinner-border-sm" role="status"
+                            aria-hidden="true"></span>
+            </button>
+        </form>
+    </mat-card>
+</div>
+

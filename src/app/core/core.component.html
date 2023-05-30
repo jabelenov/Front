@@ -1,0 +1,64 @@
+
+<mat-toolbar class="header" style="border-bottom: 1px solid; background-color: dimgray; position: sticky; top: 0;">
+    <span class="toolbar-spacer"></span>
+    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <button mat-raised-button routerLink="/security/sign-in" *ngIf="!sesionIniciada; else cerrarSesionButton">
+        Iniciar Sesión
+      </button>
+      <ng-template #cerrarSesionButton>
+        <button mat-raised-button (click)="cambiarEstadoSesion()">Cerrar sesión</button>
+      </ng-template>
+      <a (click)="openCart()"><mat-icon style="width: 30px; padding-right: 12px;">shopping_cart</mat-icon></a>
+    </div>
+  </mat-toolbar>
+<div >
+    <div style=" display: flex; justify-content: center; align-items: center;">
+        <img style="max-height: 100%; max-width: 100%; object-fit: contain;"  [src]="currentImage" alt="logo">
+    </div>      
+<mat-card>
+    <mat-card-content style="display: flex; flex-wrap: wrap;" >
+      <div *ngFor="let bike of bikes" style="flex: 0 0 33.33%; padding: 10px;" >
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{bike.name}}</mat-card-title>
+            <mat-card-subtitle>{{bike.price}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="https://yamahayamamotos.com.co/wp-content/uploads/tenere700_mini.jpg" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              {{bike.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="buyProduct(bike)">COMPRAR</button>
+            <button mat-button (click)="addCart(bike.id)">ADD</button>
+          </mat-card-actions>
+        </mat-card>
+        
+      </div>
+    </mat-card-content>
+  </mat-card>  
+</div>
+<div  style="background-color: #272424;">
+  <footer class="footer container">
+  <img class="logo-2" src="https://img.freepik.com/vector-gratis/logo-tienda-diseno-moto_1415-63.jpg?w=2000" alt="" />
+  <div class="links">
+    <h4>TIENDA DE MOTOS DE ALTO CC</h4>
+    <ul>
+      <li><a href="#">Nosotros</a></li>
+      <li><a href="#">las mejores motos</a></li>
+      <li><a href="#">Catalogo</a></li>
+      <li><a href="#">Donde estamos</a></li>
+    </ul>
+  </div>
+  <div class="links">
+    <h4>Ayuda</h4>
+    <ul>
+      <li><a href="#">Hablanos</a></li>
+      <li><a href="#">Politica de tratamiento de datos</a></li>
+      <li><a href="#">Terminos y condiciones</a></li>
+    </ul>
+  </div>
+</footer>
+</div>
