@@ -18,6 +18,7 @@ export class SignInComponent {
   isLoginFailed = false;
   returnUrl!: string;
   hide: boolean = true;
+  name: string = '';
 
   constructor(
     private router: Router,
@@ -45,6 +46,7 @@ export class SignInComponent {
             localStorage.setItem('currentUser', JSON.stringify(data));
             localStorage.setItem('userId', data.userInfo.userId);
             localStorage.setItem('userInfo', JSON.stringify(data.userInfo));
+            Swal.fire('¡Bienvenido!', JSON.stringify(data.userInfo.displayName) , 'success');
             this.router.navigate(['core']);
           }
         },
