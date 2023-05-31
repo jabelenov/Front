@@ -1,0 +1,18 @@
+{
+    "signIn": "iniciar sesion",
+    "signUp": "registrarse",
+    "init1": "Iniciar Sesion",
+    "document1": "Documento",
+    "password1": "Contraseña",    
+    "init": "Registrarse",
+    "document": "Documento",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "email": "Email",
+    "phone": "Telefono",
+    "address": "Direccion",
+    "intro": "Ingresar",
+    "signOut": "Cerrar Sesion"
+}

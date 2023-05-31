@@ -9,6 +9,7 @@ import { BuyComponent } from "./buy/buy.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AngularMaterialModule } from "../shared/angular-material/angular-material.module";
 import { CoreRoutingModule } from "./core-routing.module";
+import { TranslocoRootModule } from "../transloco-root.module";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { CoreRoutingModule } from "./core-routing.module";
       CommonModule,
       CoreRoutingModule,
       AngularMaterialModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      TranslocoRootModule,
     ]
   })
   export class CoreModule { }

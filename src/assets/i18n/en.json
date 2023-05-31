@@ -1,0 +1,18 @@
+{
+    "init1": "Sign In",
+    "document1": "Document",
+    "password1": "Password",  
+    "init": "Sign Up",
+    "document": "Document",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "intro": "Intro",
+    "signOut": "Sign Out",
+    "signInTooltip": "Sign in to access more features",
+    "signOutTooltip": "Sign out to access more features"
+}

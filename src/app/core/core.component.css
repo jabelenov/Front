@@ -536,6 +536,16 @@ links ul li a {
         margin-bottom: 15px;
     }
 
+    select {
+        background-color: #A7A7A7;
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        height: 30px;
+        padding: 5px;
+        width: 70px;
+     }
+
     .horario-txt {
         flex-direction: column;
     }

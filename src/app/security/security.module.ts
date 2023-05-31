@@ -6,6 +6,7 @@ import { SecurityRoutingModule } from "./security-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { AngularMaterialModule } from "../shared/angular-material/angular-material.module";
+import { TranslocoModule } from "@ngneat/transloco";
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { AngularMaterialModule } from "../shared/angular-material/angular-materi
         SecurityRoutingModule,
         AngularMaterialModule,
         ReactiveFormsModule,
-        CommonModule
+        CommonModule,
+        TranslocoModule
     ]
   })
   export class SecurityModule { }

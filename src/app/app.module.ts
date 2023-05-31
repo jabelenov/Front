@@ -12,6 +12,7 @@ import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { BuyComponent } from './core/buy/buy.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AngularMaterialModule } from './shared/angular-material/angular-material.module';
+import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AngularMaterialModule } from './shared/angular-material/angular-materia
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]

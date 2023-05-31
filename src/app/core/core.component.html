@@ -3,13 +3,19 @@
     <span class="toolbar-spacer"></span>
     <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
       <button mat-raised-button routerLink="/security/sign-in" *ngIf="!sesionIniciada; else cerrarSesionButton">
-        Iniciar Sesión
+        {{ 'signIn' | transloco}}
       </button>
       <ng-template #cerrarSesionButton>
-        <button mat-raised-button (click)="cambiarEstadoSesion()">Cerrar sesión</button>
+        <button mat-raised-button (click)="cambiarEstadoSesion()">{{ 'signOut' | transloco}}</button>
       </ng-template>
       <a (click)="openCart()"><mat-icon style="width: 30px; padding-right: 12px;">shopping_cart</mat-icon></a>
     </div>
+    <span>
+      <select #languageSelect (change)="changeLanguage(languageSelect.value)">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+    </span>       
   </mat-toolbar>
 <div >
     <div style=" display: flex; justify-content: center; align-items: center;">

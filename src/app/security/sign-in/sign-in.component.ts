@@ -3,6 +3,7 @@ import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms
 import { Router } from '@angular/router';
 import { IdentityService } from '../shared/identity.service';
 import Swal from 'sweetalert2';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-sign-in',
@@ -23,6 +24,7 @@ export class SignInComponent {
   constructor(
     private router: Router,
     private identityService: IdentityService,
+    private translocoService: TranslocoService
   ) {
     this.ngOnInit();
   }
@@ -35,6 +37,11 @@ export class SignInComponent {
       username: new UntypedFormControl('', Validators.required),
       password: new UntypedFormControl('', Validators.required),
     });
+    this.translocoService.langChanges$.subscribe(() => {
+      this.getTranslation('into1');
+      this.getTranslation('document1');
+      this.getTranslation('password1');
+    })
   }
 
   signIn(): void {
@@ -59,6 +66,10 @@ export class SignInComponent {
         },
       });
     
+  }
+
+  getTranslation(key: string) {
+    return this.translocoService.translate(key);
   }
 
   redirect() {

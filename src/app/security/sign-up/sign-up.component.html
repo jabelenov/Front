@@ -8,37 +8,37 @@
             <div class="row" style="display: flex; padding-top: 30px;" >
                 <div class="col-md-6" style="padding: 12px;">
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Nombre</mat-label>
+                        <mat-label>{{'name'| transloco}}</mat-label>
                         <input matInput placeholder="Nombre" type="text" formControlName="firstName" oninput="this.value = this.value.toLowerCase()" />
                     </mat-form-field>
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Email</mat-label>
+                        <mat-label>{{getTranslation('email')}}</mat-label>
                         <input matInput placeholder="Email" type="text" formControlName="email" oninput="this.value = this.value.toLowerCase()" />
                     </mat-form-field>
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Contraseña</mat-label>
+                        <mat-label>{{getTranslation('password')}}</mat-label>
                         <input matInput placeholder="Contraseña" formControlName="password" type="password" />
                     </mat-form-field>
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Teléfono</mat-label>
+                        <mat-label>{{getTranslation('phone')}}</mat-label>
                         <input matInput placeholder="Teléfono" formControlName="phone" type="text" />
                     </mat-form-field>
                 </div>
                 <div class="col-md-6" style="padding: 12px;">
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Apellido</mat-label>
+                        <mat-label>{{getTranslation('lastName')}}</mat-label>
                         <input matInput placeholder="Apellido" type="text" formControlName="lastName" oninput="this.value = this.value.toLowerCase()" />
                     </mat-form-field>
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Documento</mat-label>
+                        <mat-label>{{getTranslation('document')}}</mat-label>
                         <input matInput placeholder="Documento" type="text" formControlName="document" oninput="this.value = this.value.toLowerCase()" />
                     </mat-form-field>
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Confirmar Contraseña</mat-label>
+                        <mat-label>{{getTranslation('confirmPassword')}}</mat-label>
                         <input matInput placeholder="Confirmar Contraseña" formControlName="passwordConfirm" type="password" />
                     </mat-form-field>
                     <mat-form-field class="auth-full-width">
-                        <mat-label>Dirección</mat-label>
+                        <mat-label>{{getTranslation('address')}}</mat-label>
                         <input matInput placeholder="Dirección" formControlName="address" type="text" />
                     </mat-form-field>
                 </div>
@@ -46,7 +46,7 @@
         </mat-card-content>
         <button mat-raised-button color="accent" class="btn-block" type="submit"
                 [disabled]="!signUpForm.valid || submmiting">
-                Entrar
+                {{getTranslation('intro')}}
                 <span *ngIf="submmiting" class="spinner-border spinner-border-sm" role="status"
                             aria-hidden="true"></span>
             </button>

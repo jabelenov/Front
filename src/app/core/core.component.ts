@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { BikeService } from './service/bike.service';
 import { BuyBikeService } from './service/buyBike.service';
-import { FormBuilder, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, UntypedFormGroup } from '@angular/forms';
 import { BuyComponent } from './buy/buy.component';
 import { MatDialog } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-core',
@@ -14,6 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 })
 export class CoreComponent {
   bikes: any[] = [];
+  selectedLanguage: string = 'es';
+  languageForm!: FormGroup;
   buy!: UntypedFormGroup;
   product: any;
   sesionIniciada: boolean = false;
@@ -31,13 +34,26 @@ export class CoreComponent {
     private buyBikeService: BuyBikeService,
     private matDialog: MatDialog,
     private fb: FormBuilder,
-  ){}
+    private translocoService: TranslocoService
+  ){
+    this.languageForm = this.fb.group({
+      language: [this.selectedLanguage],
+    });
+  }
 
   ngOnInit(): void {
     this.findAllBikes();
     this.startImageSlider();
   }
 
+  onChangeLanguage(): void {
+    const selectedLanguage = this.languageForm.get('language')?.value;
+    this.translocoService.setActiveLang(selectedLanguage);
+  }
+
+  changeLanguage(lang: string) {
+    this.translocoService.setActiveLang(lang);
+  }
 
   findAllBikes(){
     this.bikeService.findAll().subscribe({
